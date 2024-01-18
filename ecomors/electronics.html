@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+  *{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ } 
+ body{
+     width: 100%;
+ }
+ .border{
+     display: grid;
+     margin-left: 60px;
+     grid-template-columns: repeat(3,1fr);
+     /* grid-template-rows: auto; */
+     gap: 10px;
+ }
+ 
+
+ #details{
+     display: flex;
+     margin-left:700px ;
+ }
+ img{
+     width: 300px;
+     height: 380px;
+ }
+
+ button{
+     padding: 5px 15px;
+     border-radius: 10px;
+     margin: 10px 130px;
+     background-color: orange;
+     box-shadow: 0px 0px 5px black;
+ }
+ button:hover{
+     background-color: rgb(72, 239, 72);
+ }
+ select{
+     margin-left: 10px;
+     color: rgb(64, 0, 255);
+ }
+ h3{
+     color:darkmagenta;
+ }
+ h2{
+     color: chartreuse;
+ }
+ 
+ .border>div{
+     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ }
+ 
+ .navbar {
+   overflow: hidden;
+  
+ }
+ .navbar a {
+   float: left;
+   display: block;
+   color:black;
+   text-align: center;    
+   text-decoration: none;
+ }
+
+ .navbar a:hover {    
+   color: cyan;
+ }
+
+ .navbar .icon {
+   display: none;
+ }
+ #cate{
+   margin-bottom: 10px;
+   margin-top: 10px;
+   height: 25px;
+ }
+ .main{
+     display: flex;
+     justify-content: space-between;
+     background-color: greenyellow;
+ }
+ #heads{
+     color: black;
+     padding: 10px;
+ }
+ @media screen and (max-width: 600px) {
+   .navbar a:not(:first-child) {display: none;}
+   .navbar a.icon {
+     float: right;
+     display: block;
+   }
+   #h{
+     display: none;
+   }
+   .main{          
+        margin-right: -480px;
+    }
+ }
+
+ @media screen and (max-width: 600px) {
+   .navbar.responsive a {
+     float: none;
+     display: block;
+     text-align: left;
+   }
+
+ }
+ .main h2{
+   margin-left: 20px;
+     padding: 5px;
+ }
+ .main a{
+     padding: 20px;
+ }
+ @media all and (min-width:320px) and (max-width:470px){
+     .border{
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         grid-template-rows: auto;
+     }
+     #details{
+         display: flex;
+         flex-direction: column;
+     }
+     .border{
+       position: absolute;
+       left: 12%;
+       right: 10%;
+     }
+ }
+</style>
+<body>
+  <div class="main">
+    <h2 id="heads">Shop</h2>
+    <div class="navbar" id="myNavbar">
+      <a href="./home.html" id="h">Home</a>
+      <a href="./boys.html">Men</a>
+      <a href="./womens.html">Women</a>
+      <a href="./kids.html">Kids</a>
+      <a href="./electronics.html">Electronics</a>
+      <a href="./Cart.html"><i class="fas fa-cart-plus ic"></i></a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        &#9776;
+      </a>
+    </div>
+</div>
+   <select name="" id="cate">
+    <option value="">Select Category</option>
+    <option value="All">All</option>
+    <option value="Phones">Phones</option>
+    <option value="TV's">TV's</option>
+    <option value="Laptops">Laptops</option>
+   </select> 
+   <div class="border">
+
+   </div>
+   <script>
+    function myFunction() {
+      var x = document.getElementById("myNavbar");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+        document.getElementById("h").style.display="initial"
+  
+      } else {
+        x.className = "navbar";
+        document.getElementById("h").style.display="none"
+      }
+    }
+  </script>
+   <script>
+   
+    let products=[
+	{
+     name:"motorola edge 40",
+     brand:" motorola",
+	   price:"25249",
+	    size:"6.2 ",
+	    category:"Phones",
+      id:"s1 ",
+	  img:" https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/m/o/edge-40-pay40030in-motorola-original-imagpqzchzhg6fex.jpeg?q=70 ",
+  },
+
+  {
+   name:"oppo reno10 5g",
+  brand:"oppo ",
+	price:"32999 ",
+	size:" 6.7",
+	category:"Phones",
+     id:"s2",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/9/e/4/-original-imagtcrumzbqj4xd.jpeg?q=70 ",
+  },
+
+  {
+               name:"realme 11pro 5g",
+brand:"realme ",
+	price:" 24999",
+	size:"6.7 ",
+	category:"Phones",
+               id:"s3 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/l/8/d/-original-imagqadpnygfnn2v.jpeg?q=70 ",
+  },
+
+  {
+               name:"vivo T2 pro 5G",
+brand:"vivo ",
+	price:"24999 ",
+	size:"6.78 ",
+	category:"Phones",
+               id:"s4 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/g/b/x/-original-imagtt4h4ptmxgwn.jpeg?q=70 ",
+  },
+
+  {
+               name:"Lenovo ldeapad ",
+brand:"lenovo ",
+	price:"68990 ",
+	size:"15.6 ",
+	category:"Laptops",
+               id:"s5 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/computer/i/y/m/-original-imagu3kmq9f2tapj.jpeg?q=70 ",
+  },
+
+  {
+               name:"HP 2023 Athlon Dual",
+brand:"HP ",
+	price:"28990 ",
+	size:" 15.6",
+	category:"Laptops",
+               id:"s6 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/computer/5/6/i/-original-imaggshd5zgfe8ev.jpeg?q=70 ",
+  },
+
+  {
+               name:"ASUS Vivobook 15",
+brand:"ASUS ",
+	price:" 32990",
+	size:"15.6 ",
+	category:" Laptops",
+               id:"s7 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/computer/q/e/z/-original-imagpxgqesgrthks.jpeg?q=70 ",
+  },
+
+  {
+               name:"Acer Extensa(2023)",
+brand:"Acer ",
+	price:" 26990",
+	size:" 15.6",
+	category:"Laptops",
+               id:"s8 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/computer/7/o/r/-original-imagnc38zedzfnw6.jpeg?q=70 ",
+  },
+
+  {
+     name:"Mi 5A ",
+    brand:" Mi",
+	price:"11499 ",
+	size:"32 ",
+	category:"TV's",
+               id:"s9 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/television/t/q/f/-original-imagt86kc5jttkxa.jpeg?q=70 ",
+  },
+
+  {
+               name:"One Plus U1S",
+brand:"One Plus ",
+	price:"50999 ",
+	size:"65 ",
+	category:"TV's",
+               id:"s10 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/kuwzssw0/television/u/i/r/u-series-65-u1s-65uc1a00-oneplus-original-imag7xtnmnkyz7je.jpeg?q=70 ",
+  },
+
+  {
+               name:"Motorola Envision X",
+brand:"motorola ",
+	price:"10999",
+	size:" 32",
+	category:"TV's",
+               id:"s11 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/television/j/1/2/32hdgdmwsbe-motorola-original-imagrwh5ghsevqnf.jpeg?q=70 ",
+  },
+
+  {
+               name:"Samsung LED smart tizen",
+   brand:"Samsung ",
+	 price:"12490 ",
+	size:"32 ",
+	category:"TV's ",
+               id:"s12 ",
+	img:" https://rukminim2.flixcart.com/image/312/312/xif0q/television/x/8/a/-original-imagttjpuyzsbzud.jpeg?q=70 ",
+  }
+
+  
+  ]
+
+   </script>
+   <script src="script.js"></script>
+</body>
+</html>

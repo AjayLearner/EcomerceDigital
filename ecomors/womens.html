@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+     *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    } 
+    body{
+        width: 100%;
+    }
+    .border{
+        display: grid;
+        margin-left: 60px;
+        grid-template-columns: repeat(3,1fr);
+        /* grid-template-rows: auto; */
+        gap: 10px;
+    }
+    
+  
+    #details{
+        display: flex;
+        margin-left:700px ;
+    }
+    img{
+        width: 300px;
+        height: 380px;
+    }
+
+    button{
+        padding: 5px 15px;
+        border-radius: 10px;
+        margin: 10px 130px;
+        background-color: orange;
+        box-shadow: 0px 0px 5px black;
+    }
+    button:hover{
+        background-color: rgb(72, 239, 72);
+    }
+    select{
+        margin-left: 10px;
+        color: rgb(64, 0, 255);
+    }
+    h3{
+        color:darkmagenta;
+    }
+    h2{
+        color: chartreuse;
+    }
+    
+    .border>div{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    
+    .navbar {
+      overflow: hidden;
+     
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color:black;
+      text-align: center;    
+      text-decoration: none;
+    }
+
+    .navbar a:hover {    
+      color: cyan;
+    }
+
+    .navbar .icon {
+      display: none;
+    }
+    #cate{
+      margin-bottom: 10px;
+      margin-top: 10px;
+      height: 25px;
+    }
+    .main{
+        display: flex;
+        justify-content: space-between;
+        background-color: greenyellow;
+    }
+    #heads{
+        color: black;
+        padding: 10px;
+    }
+    @media screen and (max-width: 600px) {
+      .navbar a:not(:first-child) {display: none;}
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+      #h{
+        display: none;
+      }
+      .main{          
+           margin-right: -480px;
+       }
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+ 
+    }
+    .main h2{
+      margin-left: 20px;
+        padding: 5px;
+    }
+    .main a{
+        padding: 20px;
+    }
+    @media all and (min-width:320px) and (max-width:470px){
+        .border{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+        }
+        #details{
+            display: flex;
+            flex-direction: column;
+        }
+        .border{
+          position: absolute;
+          left: 12%;
+          right: 10%;
+        }
+    }
+</style>
+<body>
+    <div class="main">
+        <h2 id="heads">Shop</h2>
+        <div class="navbar" id="myNavbar">
+          <a href="./home.html" id="h">Home</a>
+          <a href="./boys.html">Men</a>
+          <a href="./womens.html">Women</a>
+          <a href="./kids.html">Kids</a>
+          <a href="./electronics.html">Electronics</a>
+          <a href="./Cart.html"><i class="fas fa-cart-plus ic"></i></a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            &#9776;
+          </a>
+        </div>
+    </div>
+   <select name="" id="cate">
+    <option value="">Select Category</option>
+    <option value="All">All</option>
+    <option value="gown">Gown</option>
+    <option value="dress">Dress</option>
+    <option value="jumpsuit">Jumpsuit</option>
+   </select> 
+   <div class="border">
+
+   </div>
+   <script>
+    function myFunction() {
+      var x = document.getElementById("myNavbar");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+        document.getElementById("h").style.display="initial"
+  
+      } else {
+        x.className = "navbar";
+        document.getElementById("h").style.display="none"
+      }
+    }
+  </script>
+   <script>
+    let products=[
+    {
+	brand:"urbano fashino",
+    name:"female",
+	price:"868",
+	size:"34",
+	category:"dress",
+    id:"w1",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/dress/8/t/m/xl-gd-008-light-blue-glamoda-original-imagpn9fwwhdfkgw.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"499",
+	size:"34",
+	category:"dress",
+    id:"w2",
+	img:"https://rukminim2.flixcart.com/image/477/477/xif0q/dress/d/8/0/3xl-chiku-kittari-fashion-original-imaggvwz2dtu96dz.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"359",
+	size:"34",
+	category:"dress",
+    id:"w3",
+	img:"https://rukminim2.flixcart.com/image/612/612/kjd6nww0-0/dress/5/d/4/m-cfrk152-160-hiva-trendz-original-imafyyk5c7ffmghy.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"650",
+	size:"34",
+	category:"jumpsuit",
+    id:"w4",
+	img:"https://rukminim2.flixcart.com/image/612/612/xif0q/jumpsuit/w/f/o/s-sfjmps8255-sassafras-original-imagzj8u9gq2hnh7.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"699",
+	size:"34",
+	category:"jumpsuit",
+    id:"w5",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/lehenga-choli/i/c/f/free-3-4-sleeve-1006-lehenga-choli-vucci-original-imaghmpvwhur7kwr.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"999",
+	size:"34",
+	category:"jumpsuit",
+    id:"w6",
+	img:"https://rukminim2.flixcart.com/image/832/832/l4bn5ow0/kurta/0/l/g/l-ram-lakhan-gown1-tashwicreation-original-imagf8zdgwqfdafq.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"377",
+	size:"34",
+	category:"dress",
+    id:"w7",
+	img:"https://rukminim2.flixcart.com/image/832/832/kzpw2vk0/dress/i/c/a/l-ttj6006657-tokyo-talkies-original-imagbz284y2exgvk.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"699",
+	size:"34",
+	category:"gown",
+    id:"w8",
+	img:"https://rukminim2.flixcart.com/image/784/784/xif0q/lehenga-choli/j/u/x/free-short-sleeve-d-no-101-lehengacholi-jinnar-original-imaghzpnq4sz3cgj.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"609",
+	size:"34",
+	category:"jumpsuit",
+    id:"w9",
+	img:"https://rukminim2.flixcart.com/image/612/612/kqb8pzk0/jumpsuit/z/6/y/l-ser-jumpsuit-as-1-serein-original-imag4cmhsrernezn.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"739",
+	size:"34",
+	category:"gown",
+    id:"w10",
+	img:"https://rukminim2.flixcart.com/image/612/612/xif0q/gown/b/a/d/n-a-s-3-4-sleeve-stitched-r81-ftdiva-n-a-original-imagg2znwfwudqkc.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"359",
+	size:"34",
+	category:"dress",
+    id:"w11",
+	img:"https://rukminim2.flixcart.com/image/612/612/kjbr8280-0/dress/x/h/h/l-cfrk183-188-hiva-trendz-original-imafywxp8v89nwvc.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"female",
+	price:"493",
+	size:"34",
+	category:"gown",
+    id:"w12",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/pyjama/i/b/b/m-womennpyjamaplainp-trendy-world-original-imaghekvvcpbxyep.jpeg?q=70",
+  },
+    ]
+   
+   </script>
+   <script src="script.js"></script>
+</body>
+</html>

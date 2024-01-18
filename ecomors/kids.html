@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+  *{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ } 
+ body{
+     width: 100%;
+ }
+ .border{
+     display: grid;
+     margin-left: 60px;
+     grid-template-columns: repeat(3,1fr);
+     /* grid-template-rows: auto; */
+     gap: 10px;
+ }
+ 
+
+ #details{
+     display: flex;
+     margin-left:700px ;
+ }
+ img{
+     width: 300px;
+     height: 380px;
+ }
+
+ button{
+     padding: 5px 15px;
+     border-radius: 10px;
+     margin: 10px 130px;
+     background-color: orange;
+     box-shadow: 0px 0px 5px black;
+ }
+ button:hover{
+     background-color: rgb(72, 239, 72);
+ }
+ select{
+     margin-left: 10px;
+     color: rgb(64, 0, 255);
+ }
+ h3{
+     color:darkmagenta;
+ }
+ h2{
+     color: chartreuse;
+ }
+ 
+ .border>div{
+     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ }
+ 
+ .navbar {
+   overflow: hidden;
+  
+ }
+ .navbar a {
+   float: left;
+   display: block;
+   color:black;
+   text-align: center;    
+   text-decoration: none;
+ }
+
+ .navbar a:hover {    
+   color: cyan;
+ }
+
+ .navbar .icon {
+   display: none;
+ }
+ #cate{
+   margin-bottom: 10px;
+   margin-top: 10px;
+   height: 25px;
+ }
+ .main{
+     display: flex;
+     justify-content: space-between;
+     background-color: greenyellow;
+ }
+ #heads{
+     color: black;
+     padding: 10px;
+ }
+ @media screen and (max-width: 600px) {
+   .navbar a:not(:first-child) {display: none;}
+   .navbar a.icon {
+     float: right;
+     display: block;
+   }
+   #h{
+     display: none;
+   }
+   .main{          
+        margin-right: -480px;
+    }
+ }
+
+ @media screen and (max-width: 600px) {
+   .navbar.responsive a {
+     float: none;
+     display: block;
+     text-align: left;
+   }
+
+ }
+ .main h2{
+   margin-left: 20px;
+     padding: 5px;
+ }
+ .main a{
+     padding: 20px;
+ }
+ @media all and (min-width:320px) and (max-width:470px){
+     .border{
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         grid-template-rows: auto;
+     }
+     #details{
+         display: flex;
+         flex-direction: column;
+     }
+     .border{
+       position: absolute;
+       left: 12%;
+       right: 10%;
+     }
+ }
+</style>
+
+<body>
+  <div class="main">
+    <h2 id="heads">Shop</h2>
+    <div class="navbar" id="myNavbar">
+      <a href="./home.html" id="h">Home</a>
+      <a href="./boys.html">Men</a>
+      <a href="./womens.html">Women</a>
+      <a href="./kids.html">Kids</a>
+      <a href="./electronics.html">Electronics</a>
+      <a href="./Cart.html"><i class="fas fa-cart-plus ic"></i></a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        &#9776;
+      </a>
+    </div>
+</div>
+   <select name="" id="cate">
+    <option value="">Select Category</option>
+    <option value="All">All</option>
+    <option value="kurtha">kurtha</option>
+    <option value="suit">suit</option>
+    <option value="t-shirt">t-shirt</option>
+   </select> 
+   <div class="border">
+
+   </div>
+   <script>
+    function myFunction() {
+      var x = document.getElementById("myNavbar");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+        document.getElementById("h").style.display="initial"
+  
+      } else {
+        x.className = "navbar";
+        document.getElementById("h").style.display="none"
+      }
+    }
+  </script>
+   <script>
+   
+    let products=[
+  {
+	brand:"urbano fashino",
+  name:"kids",
+	price:"499",
+	size:"24",
+	category:"t-shirt",
+  id:"v",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-apparel-combo/b/1/d/2-3-years-printed-emblica-original-imagpyf2jdmubycn.jpeg?q=70",
+  },
+  {
+	brand:"Lens",
+    name:"kids",
+	price:"474",
+	size:"24",
+	category:"t-shirt",
+  id:"v1",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-t-shirt/x/k/u/5-6-years-na-41761-smartraho-original-imagzgchqcwde5ph.jpeg?q=70",
+  },
+  {
+	 brand:"King",
+   name:"kids",
+	price:"1399",
+	size:"24",
+	category:"suit",
+  id:"v2",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/suit/e/y/k/11-12-years-s-205-royal-blue-bt-dezines-original-imags5fvftuz6dyx.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"kids",
+	price:"259",
+	size:"24",
+	category:"kurtha",
+  id:"v3",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-ethnic-set/t/z/q/6-12-months-kurta-with-platting-dhoti-new-gen-original-imafmjtxmpjkbywx-bb.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"kids",
+	price:"295",
+	size:"24",
+	category:"kurtha",
+  id:"v4",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-ethnic-set/i/g/n/5-6-years-ffw-002ye-farishta-fashion-original-imagguxfbtbmkdy5.jpeg?q=70",
+  },
+  {
+	brand:"Lens",
+    name:"kids",
+	price:"284",
+	size:"24",
+	category:"kurta",
+  id:"v5",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-ethnic-set/y/g/z/12-18-months-stc-krishna001-evaan-enterprises-original-imafswuw66ykjhev-bb.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"kids",
+	price:"899",
+	size:"24",
+	category:"t-shirt ",
+  id:"v6",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-apparel-combo/5/i/7/9-10-years-lbcmbtj04-xy-life-original-imagjkkbjchmyxbp.jpeg?q=70",
+  },
+  {
+	brand:"Lens",
+    name:"kids",
+	price:"469",
+	size:"24",
+	category:"t-shirt",
+  id:"v7",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/h/u/l/8-9-years-kdschden-carbonn-clozz-original-imagqygmwh3nhtng.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"kids",
+	price:"1799",
+	size:"24",
+	category:"suit",
+  id:"v8",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/suit/5/j/3/12-18-months-s-205-wine-bt-dezines-original-imags5ehreqnhsrr.jpeg?q=70",
+  },
+  {
+	brand:"King",
+    name:"kids",
+	price:"449",
+	size:"24",
+	category:"kurtha",
+  id:"v9",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-ethnic-set/p/l/u/0-6-months-ang-red-little-dreams-original-imagahepm4qwbd6d-bb.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"kids",
+	price:"280",
+	size:"24",
+	category:"kurtha",
+  id:"v10",
+	img:"https://rukminim2.flixcart.com/image/832/832/xif0q/kids-ethnic-set/w/u/c/6-12-months-lu-kt-dt-dp-gld-looks-united-original-imafczcdzycvfhd5-bb.jpeg?q=70",
+  },
+  {
+	brand:"urbano fashino",
+    name:"kids",
+	price:"284",
+	size:"24",
+	category:"kurtha",
+  id:"v11",
+	img:"https://rukminim2.flixcart.com/image/832/832/kq2o2vk0/kids-ethnic-set/a/w/j/3-6-months-with-jwellrey-rkc-original-imag45upzgsvfe8j.jpeg?q=70",
+  }
+  
+  ]
+  let carddata=JSON.parse(localStorage.getItem("addtocard"))||[]
+  let app=document.querySelector(".border")
+    function display(products){
+      app.innerHTML=null
+    products.forEach((e)=>{
+     let divs=document.createElement("div")
+     let img=document.createElement("img")
+     img.src=e.img
+     let h2=document.createElement("h2")
+     h2.textContent=e.brand
+     let h3=document.createElement("h4")
+     h3.textContent=e.name
+     let h31=document.createElement("h3")
+     h31.textContent="Rs:"+e.price
+     let h32=document.createElement("h3")
+     h32.textContent="Size:"+e.size
+     let h33=document.createElement("h4")
+     h33.textContent=e.category
+     let btn=document.createElement("button")
+     btn.textContent="AddToCart"
+     btn.addEventListener("click",()=>{
+        if(addtocard(e.id)===true){
+          carddata.push(e)
+          localStorage.setItem("addtocard",JSON.stringify(carddata))
+          alert("Item added to the cart")
+        }
+        else{
+          alert("Item already in the cart")
+        }
+     })
+     divs.append(img,h2,h3,h31,h32,h33,btn)
+     app.append(divs)
+    })
+}
+display(products)
+let fil= document.querySelector("#cate")
+  fil.addEventListener("change",()=>{
+    if(fil.value==='All'){
+        display(products);
+    }
+    else{
+        let filtered=products.filter(function(el){
+            return el.category===fil.value;
+        })
+        display(filtered);
+
+    }
+   })
+   function addtocard(id){
+    for(let i=0;i<carddata.length;i++){
+      if(carddata[i].id==id){
+        return false;
+      }
+    }
+    return true;
+   }
+   </script>
+</body>
+</html>

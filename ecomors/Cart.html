@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    } 
+    body{
+        width: 100%;
+    }
+    .border{
+        display: grid;
+        margin-left: 60px;
+        grid-template-columns: repeat(3,1fr);
+        /* grid-template-rows: auto; */
+        gap: 10px;
+    }
+    
+  
+    #details{
+        display: flex;
+        margin-left:700px ;
+    }
+    img{
+        width: 300px;
+        height: 380px;
+    }
+
+    button{
+        padding: 5px 15px;
+        border-radius: 10px;
+        margin: 10px 130px;
+        background-color: orange;
+        box-shadow: 0px 0px 5px black;
+    }
+    button:hover{
+        background-color: rgb(72, 239, 72);
+    }
+    select{
+        margin-left: 10px;
+        color: rgb(64, 0, 255);
+    }
+    h3{
+        color:darkmagenta;
+    }
+    h2{
+        color: chartreuse;
+    }
+    
+    .border>div{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    
+    .navbar {
+      overflow: hidden;
+     
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color:black;
+      text-align: center;
+     
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+    
+      color: cyan;
+    }
+
+    .navbar .icon {
+      display: none;
+    }
+    .main{
+        display: flex;
+        justify-content: space-between;
+        background-color: greenyellow;
+    }
+    #heads{
+        color: black;
+        padding: 10px;
+    }
+    @media screen and (max-width: 600px) {
+      .navbar a:not(:first-child) {display: none;}
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+      #h{
+        display: none;
+      }
+        .main{
+           
+            margin-right: -380px;
+
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      .border{
+      
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+        }
+        
+ 
+    }
+    
+    .main h2{
+      margin-left: 20px;
+        padding: 5px;
+    }
+    .main a{
+        padding: 20px;
+    }
+</style>
+<body>
+    <div class="main">
+        <h2 id="heads">Shop</h2>
+        <div class="navbar" id="myNavbar">
+          <a href="./home.html" id="h">Home</a>
+          <a href="./boys.html">Men</a>
+          <a href="./womens.html">Women</a>
+          <a href="./kids.html">Kids</a>
+          <a href="./electronics.html">Electronics</a>
+          <a href="./Cart.html"><i class="fas fa-cart-plus ic"></i></a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            &#9776;
+          </a>
+        </div>
+    </div>
+    <div class="border">
+
+    </div>
+    <h2 id="total"> </h2>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+          x.className += " responsive";
+          document.getElementById("h").style.display="initial"
+    
+        } else {
+          x.className = "navbar";
+          document.getElementById("h").style.display="none"
+        }
+      }
+    </script>
+</body>
+<script>
+    let data=JSON.parse(localStorage.getItem("addtocard"))||[]
+    let app=document.querySelector(".border")
+    let totalprice=0;
+    function display(data){  
+        totalprice=0;  
+    data.forEach((e)=>{
+    totalprice+=+e.price
+    document.getElementById("total").innerText="Total Amount:"+totalprice
+     let divs=document.createElement("div")
+     let img=document.createElement("img")
+     img.src=e.img
+     let h2=document.createElement("h2")
+     h2.textContent=e.brand
+     let h3=document.createElement("h3")
+     h3.textContent=e.name
+     let h31=document.createElement("h3")
+     h31.textContent="Rs."+e.price
+     let h32=document.createElement("h3")
+     h32.textContent="Sizes:"+e.size
+     let h33=document.createElement("h3")
+     h33.textContent=e.category
+     let btn=document.createElement("button")
+     btn.textContent="Remove"
+     btn.addEventListener("click",()=>{
+        deleted(e.id)
+        location.reload();
+     })
+     divs.append(img,h2,h3,h31,h32,h33,btn)
+     app.append(divs)
+    })
+}
+display(data)
+function deleted(ids){
+    let deletedarray=data.filter((el)=>{
+        return el.id!=ids
+    })
+    data=deletedarray
+    localStorage.setItem("addtocard",JSON.stringify(data))
+    display(data)
+}
+</script>
+</html>

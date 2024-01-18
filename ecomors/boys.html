@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+<style>
+     *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    } 
+    body{
+        width: 100%;
+    }
+    .border{
+        display: grid;
+        margin-left: 60px;
+        grid-template-columns: repeat(3,1fr);
+        /* grid-template-rows: auto; */
+        gap: 10px;
+    }
+    
+  
+    #details{
+        display: flex;
+        margin-left:700px ;
+    }
+    img{
+        width: 300px;
+        height: 380px;
+    }
+
+    button{
+        padding: 5px 15px;
+        border-radius: 10px;
+        margin: 10px 130px;
+        background-color: orange;
+        box-shadow: 0px 0px 5px black;
+    }
+    button:hover{
+        background-color: rgb(72, 239, 72);
+    }
+    select{
+        margin-left: 10px;
+        color: rgb(64, 0, 255);
+    }
+    h3{
+        color:darkmagenta;
+    }
+    h2{
+        color: chartreuse;
+    }
+    
+    .border>div{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    
+    .navbar {
+      overflow: hidden;
+     
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color:black;
+      text-align: center;    
+      text-decoration: none;
+    }
+
+    .navbar a:hover {    
+      color: cyan;
+    }
+
+    .navbar .icon {
+      display: none;
+    }
+    #cate{
+      margin-bottom: 10px;
+      margin-top: 10px;
+      height: 25px;
+    }
+    .main{
+        display: flex;
+        justify-content: space-between;
+        background-color: greenyellow;
+    }
+    #heads{
+        color: black;
+        padding: 10px;
+    }
+    @media screen and (max-width: 600px) {
+      .navbar a:not(:first-child) {display: none;}
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+      #h{
+        display: none;
+      }
+      .main{          
+           margin-right: -480px;
+       }
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+ 
+    }
+    .main h2{
+      margin-left: 20px;
+        padding: 5px;
+    }
+    .main a{
+        padding: 20px;
+    }
+    @media all and (min-width:320px) and (max-width:470px){
+        .border{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+        }
+        #details{
+            display: flex;
+            flex-direction: column;
+        }
+        .border{
+          position: absolute;
+          left: 12%;
+          right: 10%;
+        }
+    }
+</style>
+<body>
+    <div class="main">
+        <h2 id="heads">Shop</h2>
+        <div class="navbar" id="myNavbar">
+          <a href="./home.html" id="h">Home</a>
+          <a href="./boys.html">Men</a>
+          <a href="./womens.html">Women</a>
+          <a href="./kids.html">Kids</a>
+          <a href="./electronics.html">Electronics</a>
+          <a href="./Cart.html"><i class="fas fa-cart-plus ic"></i></a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            &#9776;
+          </a>
+        </div>
+    </div>
+   <select name="" id="cate">
+    <option value="">Select Category</option>
+    <option value="All">All</option>
+    <option value="Shirt">Shirt</option>
+    <option value="TShirt">TShirt</option>
+    <option value="jeans">jeans</option>
+   </select> 
+   <div class="border">
+    
+   </div>
+   <script>
+    function myFunction() {
+      var x = document.getElementById("myNavbar");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+        document.getElementById("h").style.display="initial"
+  
+      } else {
+        x.className = "navbar";
+        document.getElementById("h").style.display="none"
+      }
+    }
+  </script>
+</body>
+<script> 
+    let products=[
+        {
+            brand:"Urbano Fashino",
+            name:"Men slim",
+            price:"799",
+            size:"32,34",
+            category:"Shirt",
+            id:"m1",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/shopsy-shirt/3/6/9/s-spc-csrmnkt-maroon-voroxy-original-imagsz78ukkf4rgb.jpeg?q=70",
+        },
+        {
+            brand:"Urbano Fashino",
+            name:"Men slim",
+            price:"599",
+            size:"32,34",
+            category:"Shirt",
+            id:"m2",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/o/j/t/-original-imags23pqg87sxv9.jpeg?q=70",
+        },
+        {
+            brand:"Killer",
+            name:"Men slim",
+            price:"899",
+            size:"32,34",
+            category:"Shirt",
+            id:"m3",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/f/a/g/xl-m24121-blue-blue-buddha-original-imagqbrgbfzjpn8h.jpeg?q=70",
+        },
+        {
+            brand:"Killer",
+            name:"Men slim",
+            price:"1999",
+            size:"32,34",
+            category:"Shirt",
+            id:"m4",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/p/2/q/-original-imags23nszvhkhfd.jpeg?q=70",
+        },
+        {
+            brand:"Killer",
+            name:"Men slim",
+            price:"1199",
+            size:"32,34",
+            category:"Shirt",
+            id:"m5",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/0/2/l/m-bhmlslv23003-grey-being-human-original-imagpe9zkpyntnmf.jpeg?q=70",
+        },
+        {
+            brand:"Road Star",
+            name:"Men slim",
+            price:"499",
+            size:"32,34",
+            category:"TShirt",
+            id:"m6",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/q/j/b/l-rhp1554-red-tape-original-imagnefczce3m2hr.jpeg?q=70"
+        },
+        {
+            brand:"saila",
+            name:"Men slim",
+            price:"899",
+            size:"32,34",
+            category:"TShirt",
+            id:"m7",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/j/k/g/s-xyptsrt11-xyxx-original-imagrh83aj6h4y62.jpeg?q=70"
+        },
+        {
+            brand:"saila",
+            name:"Men slim",
+            price:"699",
+            size:"32,34",
+            category:"TShirt",
+            id:"m8",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/2/9/y/m-bylrn-z31-blive-original-imaggdk9bjtk2hf4.jpeg?q=70"
+        },
+        {
+            brand:"Saila",
+            name:"Men slim",
+            price:"899",
+            size:"32,34",
+            category:"TShirt",
+            id:"m9",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/r/v/k/m-ausk0165-ausk-original-imaghu9fbhcgf2za.jpeg?q=70"
+        },
+        {
+            brand:"Killer",
+            name:"Men slim",
+            price:"999",
+            size:"32,34",
+            category:"jeans",
+            id:"m10",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/jean/o/g/2/34-bhdi22618-being-human-original-imagjyksmczjtvdb.jpeg?q=70"
+        },
+        {
+            brand:"Road Star",
+            name:"Men slim",
+            price:"1799",
+            size:"32,34",
+            category:"jeans",
+            id:"m11",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/jean/8/9/3/-original-imagsqbzp8gzfmcz.jpeg?q=70"
+        },
+        {
+            brand:"Killer",
+            name:"Men slim fit",
+            price:"1599",
+            size:"32,34",
+            category:"jeans",
+            id:"m12",
+            img:"https://rukminim2.flixcart.com/image/612/612/l4zxn680/jean/o/q/d/32-18298-1228-levi-s-original-imagfrrecq69kmkn.jpeg?q=70"
+        },
+        {
+            brand:"Killer",
+            name:"Men slim",
+            price:"899",
+            size:"32,34",
+            category:"jeans",
+            id:"m13",
+            img:"https://rukminim2.flixcart.com/image/612/612/xif0q/jean/2/a/l/34-bootep-iceblue-urbano-fashion-original-imagnhyjmu7zbxym.jpeg?q=70"
+        },
+
+    ]
+   
+</script>
+<script src="script.js"></script>
+
+</html>
